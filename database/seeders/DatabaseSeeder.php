@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use Database\Factories\CategoryFactory;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,9 +21,10 @@ class DatabaseSeeder extends Seeder
              CategorySeeder::class
          ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+         \App\Models\User::factory()->create([
+             'name' => 'Admin',
+             'email' => 'admin@admin.com',
+             'password' => Hash::make('password')
+         ]);
     }
 }
